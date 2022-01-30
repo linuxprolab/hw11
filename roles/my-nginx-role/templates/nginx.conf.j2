@@ -1,0 +1,12 @@
+user nginx;
+worker_processes auto;
+events {
+}
+http {
+    server {
+        listen {{ nginx_port }};
+        server_name {% for name in nginx_domains %}{{ name }}{% if not loop.last %} {% endif %}{% endfor %} localhost;
+        root /var/www/html;
+        index index.html;
+    }
+}

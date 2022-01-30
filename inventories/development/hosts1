@@ -1,0 +1,4 @@
+[all:vars]
+ansible_user='vagrant'
+[web]
+nginx01 ansible_host=127.0.0.1 ansible_port=2222 ansible_ssh_private_key='.vagrant/machines/default/virtualbox/private_key'

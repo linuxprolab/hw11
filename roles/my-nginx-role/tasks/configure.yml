@@ -1,0 +1,13 @@
+---
+- name: Creates directory
+  file:
+    path: /var/www/html
+    state: directory
+
+- name: Copy {{ item.name }} to {{ item.dir }}
+  template:
+    src: "{{ item.name }}.j2"
+    dest: "{{ item.dir }}/{{ item.name }}"
+  loop: "{{ nginx_files }}"
+  notify: 
+    - restart nginx

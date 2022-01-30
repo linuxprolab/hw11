@@ -1,0 +1,12 @@
+---
+# defaults file for my-nginx-role
+nginx_port: 8080
+nginx_domains: 
+  - mydomain.com
+  - api.mydomain.com
+  - admin.mydomain.com
+nginx_files:
+  - name: "nginx.conf"
+    dir: "/etc/nginx"
+  - name: "index.html"
+    dir: "/var/www/html"
